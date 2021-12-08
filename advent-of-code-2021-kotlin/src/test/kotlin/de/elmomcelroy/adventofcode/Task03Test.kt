@@ -24,10 +24,10 @@ class Task03Test {
                 "00010",
                 "01010")
 
-        val diagnosticReport = subjectUnderTest.calculateDiagnosticReport(diagnosticReportRawData)
-        assertEquals(22, diagnosticReport.gammaRateAsInt())
-        assertEquals(9, diagnosticReport.epsilonRateAsInt())
-        assertEquals(198, diagnosticReport.powerConsumption())
+        val powerConsumption = subjectUnderTest.calculatePowerConsumption(diagnosticReportRawData)
+        assertEquals(22, subjectUnderTest.gammaRateAsInt())
+        assertEquals(9, subjectUnderTest.epsilonRateAsInt())
+        assertEquals(198, powerConsumption)
     }
 
     @Test
@@ -35,9 +35,9 @@ class Task03Test {
         val diagnosticReportRaw = Utils.readFileAsString("/task03/input.txt")
         assertNotNull(diagnosticReportRaw)
         assertEquals(1000, diagnosticReportRaw.size)
-        val diagnosticReport = subjectUnderTest.calculateDiagnosticReport(diagnosticReportRaw)
-        println("DiagnosticReport gamma rate: ${diagnosticReport.gammaRateAsInt()}, epsilon rate: ${diagnosticReport.epsilonRateAsInt()}. " +
-                "Multiplied: ${diagnosticReport.powerConsumption()}")
+        val powerConsumption = subjectUnderTest.calculatePowerConsumption(diagnosticReportRaw)
+        println("DiagnosticReport gamma rate: ${subjectUnderTest.gammaRateAsInt()}, epsilon rate: ${subjectUnderTest.epsilonRateAsInt()}. " +
+                "Multiplied: $powerConsumption")
     }
 
     @Test
@@ -55,10 +55,10 @@ class Task03Test {
                 "00010",
                 "01010")
 
-        val diagnosticReport = subjectUnderTest.calculateDiagnosticReport(diagnosticReportRawData)
-        assertEquals(23, diagnosticReport.oxygenGeneratorRatingAsInt())
-        assertEquals(10, diagnosticReport.co2ScrubberRatingAsInt())
-        assertEquals(230, diagnosticReport.liveSupportRating())
+        val lifeSupportRating = subjectUnderTest.calculateLifeSupportRating(diagnosticReportRawData)
+        assertEquals(23, subjectUnderTest.oxygenGeneratorRatingAsInt(), "oxygenGeneratorRating")
+        assertEquals(10, subjectUnderTest.co2ScrubberRatingAsInt(), "co2ScrubberRating")
+        assertEquals(230, lifeSupportRating, "lifeSupportRating")
     }
 
     @Test
@@ -66,10 +66,11 @@ class Task03Test {
         val diagnosticReportRaw = Utils.readFileAsString("/task03/input2.txt")
         assertNotNull(diagnosticReportRaw)
         assertEquals(1000, diagnosticReportRaw.size)
-        val diagnosticReport = subjectUnderTest.calculateDiagnosticReport(diagnosticReportRaw)
-        println("DiagnosticReport oxygen generator rating: ${diagnosticReport.oxygenGeneratorRatingAsInt()}, " +
-                "CO2 scrubber rating: ${diagnosticReport.co2ScrubberRatingAsInt()}. " +
-                "life support rating: ${diagnosticReport.liveSupportRating()}")
+        val lifeSupportRating = subjectUnderTest.calculateLifeSupportRating(diagnosticReportRaw)
+        println("DiagnosticReport oxygen generator rating: ${subjectUnderTest.oxygenGeneratorRatingAsInt()}, " +
+                "CO2 scrubber rating: ${subjectUnderTest.co2ScrubberRatingAsInt()}. " +
+                "life support rating: $lifeSupportRating")
+        assertEquals(3969126, lifeSupportRating)
     }
 
 }
