@@ -27,10 +27,10 @@ class Bingo {
                         boards.remove(board)
                     } else {
                         winningNumber = draw
-                        return board.sumUnmarkedNumbers()
 
                         board.printBoardFields()
                         board.printBoardHits()
+                        return board.sumUnmarkedNumbers()
                     }
                 }
             }
@@ -38,10 +38,6 @@ class Bingo {
         }
         return -1
     }
-
-//    private fun playRound(): List<Board> {
-//
-//    }
 
     private fun parseRawInput(bingoRawInput: List<String>) {
         draws.addAll(bingoRawInput.first().split(",").map { draw -> draw.toInt() })
