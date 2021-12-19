@@ -41,6 +41,19 @@ class Utils {
                 throw FileNotFoundException("Empty fileName. Cannot read file")
             }
         }
+
+        fun readRowsWithoutSeparatorAsInt(fileName: String): List<List<Int>> {
+            if (fileName.isNotEmpty()) {
+                return this::class.java.getResourceAsStream(fileName)
+                        .bufferedReader()
+                        .readLines()
+                        .map { row: String ->
+                            row.map { it.toString().toInt() }
+                        }
+            } else {
+                throw FileNotFoundException("Empty fileName. Cannot read file")
+            }
+        }
     }
 
 }

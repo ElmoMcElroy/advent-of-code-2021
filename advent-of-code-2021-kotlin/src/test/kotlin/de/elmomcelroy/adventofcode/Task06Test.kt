@@ -38,19 +38,19 @@ class Task06Test {
     @Test
     fun testLanternFishGrowthCalculated() {
 
-        val lanternfishes = "3,4,3,1,2"
-
-        val numFishesAfter18 = subjectUnderTest.startGrowthCalculated(lanternfishes, 18)
-        assertEquals(26, numFishesAfter18, "Number of fishes after 18 days")
-
-        val numFishesAfter80 = subjectUnderTest.startGrowthCalculated(lanternfishes, 80)
-        assertEquals(5934, numFishesAfter80, "Number of fishes after 80 days")
-
-        val numFishesAfter128 = subjectUnderTest.startGrowthCalculated(lanternfishes, 128)
-        assertEquals(388976, numFishesAfter128, "Number of fishes after 128 days")
-
-        val numFishesAfter180 = subjectUnderTest.startGrowthCalculated(lanternfishes, 180)
-        assertEquals(35890123, numFishesAfter180, "Number of fishes after 180 days")
+//        val lanternfishes = "3,4,3,1,2"
+//
+//        val numFishesAfter18 = subjectUnderTest.startGrowthCalculated(lanternfishes, 18)
+//        assertEquals(26, numFishesAfter18, "Number of fishes after 18 days")
+//
+//        val numFishesAfter80 = subjectUnderTest.startGrowthCalculated(lanternfishes, 80)
+//        assertEquals(5934, numFishesAfter80, "Number of fishes after 80 days")
+//
+//        val numFishesAfter128 = subjectUnderTest.startGrowthCalculated(lanternfishes, 128)
+//        assertEquals(388976, numFishesAfter128, "Number of fishes after 128 days")
+//
+//        val numFishesAfter180 = subjectUnderTest.startGrowthCalculated(lanternfishes, 180)
+//        assertEquals(35890123, numFishesAfter180, "Number of fishes after 180 days")
 
 //        val numFishesAfter256 = subjectUnderTest.startGrowthCalculated(lanternfishes, 256)
 //        assertEquals(26984457539, numFishesAfter256, "Number of fishes after 256 days")
