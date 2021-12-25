@@ -54,6 +54,19 @@ class Utils {
                 throw FileNotFoundException("Empty fileName. Cannot read file")
             }
         }
-    }
 
+        fun parseToArray(input: List<List<Int>>): Array<IntArray> {
+            val inputArray: Array<IntArray> = Array(input.size) { IntArray(input.first().size) }
+            for (row in input.indices step 1) {
+                val rowArray = input[row]
+                for (column in rowArray.indices step 1) {
+                    inputArray[row][column] = rowArray[column]
+                    print("${inputArray[row][column]}")
+                }
+                println()
+            }
+            println()
+            return inputArray
+        }
+    }
 }
